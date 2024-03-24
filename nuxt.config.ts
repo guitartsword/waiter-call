@@ -10,5 +10,15 @@ export default defineNuxtConfig({
   extends: ['@sidebase/core'],
   typescript: {
     shim: false
+  },
+  app: {
+    head: {
+      link: [
+        {
+          rel: 'stylesheet',
+          href: 'https://cdn.jsdelivr.net/npm/css.gg/icons/icons.css'
+        }
+      ]
+    }
   }
 })

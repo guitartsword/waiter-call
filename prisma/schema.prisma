@@ -13,4 +13,10 @@ model Table {
   id          String @id @default(uuid())
   name        String
   location    String
+  status      String @default("IDLE") //TableStatus @default(IDLE)
 }
+
+// enum TableStatus {
+//   IDLE
+//   CALL
+// }

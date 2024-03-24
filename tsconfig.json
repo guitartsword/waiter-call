@@ -1,4 +1,16 @@
 {
+  // "compilerOptions": {
+  //   "forceConsistentCasingInFileNames": true,
+  //   "jsx": "preserve",
+  //   "jsxImportSource": "vue",
+  //   "moduleResolution": "Bundler",
+  //   "isolatedModules": true,
+  //   "useDefineForClassFields": true,
+  //   "noImplicitThis": true,
+  //   "esModuleInterop": true,
+  //   "verbatimModuleSyntax": true,
+  //   "allowJs": true,
+  // },
   // https://nuxt.com/docs/guide/concepts/typescript
   "extends": "./.nuxt/tsconfig.json"
 }

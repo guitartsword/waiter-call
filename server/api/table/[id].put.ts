@@ -10,5 +10,5 @@ export default eventHandler(async (event: H3Event) => {
     id,
     ...body
   }
-  return prisma.example.upsert({ where: { id }, create: data, update: data })
+  return prisma.table.upsert({ where: { id }, create: data, update: data })
 })
