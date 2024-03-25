@@ -1,0 +1,15 @@
+name: waiter-call
+services:
+  db:
+    image: postgres:16
+    environment:
+      - PGDATA=/var/lib/postgresql/data/pgdata
+      - POSTGRES_PASSWORD=mysecretpassword
+    restart: unless-stopped
+    ports:
+      - 5432:5432
+    volumes:
+      - pg-data:/var/lib/postgresql/data/pgdata
+
+volumes:
+  pg-data:

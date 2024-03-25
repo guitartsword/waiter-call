@@ -1,5 +1,5 @@
 # see https://docs.docker.com/engine/reference/builder/#understand-how-arg-and-from-interact
-ARG NODE_VERSION=node:20
+ARG NODE_VERSION=node:18
 
 FROM $NODE_VERSION AS dependency-base
 
@@ -10,6 +10,7 @@ WORKDIR /app
 # copy the app, note .dockerignore
 COPY package.json .
 COPY package-lock.json .
+RUN npm install -g npm@10.5.0
 RUN npm ci
 
 FROM dependency-base AS production-base

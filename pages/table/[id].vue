@@ -57,7 +57,7 @@ const message = computed<string>(() => {
           'bg-gray-600 hover:bg-gray-600': data?.status === 'CALL',
           'bg-green-600 hover:bg-green-500': data?.status === 'IDLE',
         }"
-        class="max-w-fit w-72 h-72 sm:w-96 sm:h-96 rounded-full text-5xl bg-gray-600 m-0 p-0"
+        class="w-72 h-72 sm:w-96 sm:h-96 rounded-full text-5xl bg-gray-600 m-0 p-0"
         @click="onCallWaiter"
       >
         {{ message }}

@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "dev": "prisma generate && nuxt dev",
-    "build": "prisma generate --data-proxy && nuxt build",
+    "build": "prisma generate && nuxt build",
     "start": "NODE_ENV=production node .output/server/index.mjs",
     "lint": "eslint .",
     "test": "TZ=UTC vitest --run",
