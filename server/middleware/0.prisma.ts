@@ -1,4 +1,5 @@
-import { PrismaClient } from '@prisma/client/edge'
+import { PrismaClient as PrismaClientEdge } from '@prisma/client/edge'
+import { PrismaClient } from '@prisma/client'
 
 let prisma: PrismaClient
 declare module 'h3' {
@@ -9,7 +10,11 @@ declare module 'h3' {
 
 export default eventHandler((event) => {
   if (!prisma) {
-    prisma = new PrismaClient()
+    if (process.env.EDGE === 'false') {
+      prisma = new PrismaClient()
+    } else {
+      prisma = new PrismaClientEdge()
+    }
   }
   event.context.prisma = prisma
 })

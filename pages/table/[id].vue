@@ -48,17 +48,20 @@ const message = computed<string>(() => {
     <h1 class="text-4xl font-medium">
       Mesa: {{ data?.name }}
     </h1>
+    <h2>
+      Lugar: {{ data?.location }}
+    </h2>
     <div class="mt-16">
-      <wc-button
+      <button
         :class="{
-          'bg-gray-600': data?.status === 'CALL',
-          'bg-green-600': data?.status === 'IDLE',
+          'bg-gray-600 hover:bg-gray-600': data?.status === 'CALL',
+          'bg-green-600 hover:bg-green-500': data?.status === 'IDLE',
         }"
-        class="pw-5 h-[50vh] w-[50vh] rounded-full text-5xl bg-gray-600 hover:bg-green-500"
+        class="max-w-fit w-72 h-72 sm:w-96 sm:h-96 rounded-full text-5xl bg-gray-600 m-0 p-0"
         @click="onCallWaiter"
       >
         {{ message }}
-      </wc-button>
+      </button>
     </div>
   </div>
 </template>
